@@ -1,0 +1,496 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #e6ffff;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+/*车轮运动*/
+@-webkit-keyframes wheelAnimate {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(36deg);
+  }
+  30% {
+    transform: rotate(108deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(216deg);
+  }
+  80% {
+    transform: rotate(286deg);
+  }
+  90% {
+    transform: rotate(324deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*脚蹬运动*/
+@-webkit-keyframes padelAnimateWheel {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes padelAnimateP {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+/*链条运动*/
+@-webkit-keyframes lineAnimate {
+  from {
+    background-position: 0 25%;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@-webkit-keyframes lineAnimate2 {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 25%;
+  }
+}
+/*自行车运动*/
+@-webkit-keyframes bikeAnimate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(140VW);
+  }
+}
+.bike {
+  width: 532px;
+  height: 280px;
+  position: relative;
+  left: -532px;
+  animation: bikeAnimate infinite step-start 4s;
+  animation-timing-function: linear;
+}
+.bike .wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.bike .wrap .body {
+  width: 340px;
+  height: 182px;
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+.bike .wrap .body div {
+  position: absolute;
+  background: #5E999B;
+  z-index: 2;
+}
+.bike .wrap .body .le-t {
+  width: 8px;
+  height: 136px;
+  transform: rotate(39deg);
+  bottom: -13px;
+  left: 39px;
+}
+.bike .wrap .body .le-b {
+  width: 159px;
+  height: 8px;
+  bottom: 0;
+  left: 5px;
+}
+.bike .wrap .body .center {
+  width: 8px;
+  height: 205px;
+  transform: rotate(-33deg);
+  margin: -2px 0 0 102px;
+}
+.bike .wrap .body .rig-t {
+  width: 180px;
+  height: 8px;
+  transform: rotate(-8deg);
+  margin: 54px 0 0 88px;
+}
+.bike .wrap .body .rig-b {
+  width: 8px;
+  height: 168px;
+  transform: rotate(41deg);
+  margin: 35px 0 0 214px;
+}
+.bike .wrap .body .rig-b .bottle {
+  width: 20px;
+  height: 36px;
+  background: #daeded;
+  border: 3px solid #5E999B;
+  position: absolute;
+  margin: 54px 0 0 -23px;
+}
+.bike .wrap .body .rig-b .bottle span {
+  width: 9px;
+  height: 4px;
+  background: #666;
+  position: absolute;
+  margin: -17px 0 0 5px;
+}
+.bike .wrap .body .rig-b .bottle span::before {
+  content: "";
+  width: 18px;
+  height: 10px;
+  position: absolute;
+  border: 1px solid #98baba;
+  background: #daeded;
+  z-index: 2;
+  margin: 3px 0 0 -5px;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.bike .wrap .body .rig-b .bottle span::after {
+  content: "";
+  width: 20px;
+  height: 3px;
+  background: #5E999B;
+  position: absolute;
+  margin: 41px 0 0 -5px;
+}
+.bike .wrap .body .right-most {
+  width: 8px;
+  height: 180px;
+  transform: rotate(-25deg);
+  margin: 4px 0 0 289px;
+}
+.bike .wrap .body .front {
+  width: 60px;
+  height: 8px;
+  margin: 8px 0 0 250px;
+  border-radius: 5px 0 0 5px;
+  z-index: 3;
+}
+.bike .wrap .body .surve {
+  width: 40px;
+  height: 40px;
+  border: 8px solid #666;
+  background: none;
+  margin: 8px 0 0 302px;
+  border-left: 8px solid transparent;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.bike .wrap .body .seat {
+  width: 50px;
+  height: 10px;
+  background: #666;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  border-radius: 0 15px 15px 0;
+}
+.bike .wrap .body .seat::before {
+  width: 49px;
+  height: 16px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -18px;
+  background: #666;
+  transform: rotate(-4deg);
+  border-radius: 50%;
+}
+.bike .wrap .body .seat::after {
+  width: 0;
+  height: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -31px;
+  border-width: 0 40px 16px 42px;
+  border-style: solid;
+  border-color: transparent transparent #666 transparent;
+  transform: rotate(179deg);
+  border-radius: 50%;
+}
+.bike .wrap .wheel {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+}
+.bike .wrap .wheel div[class|="wheel"] {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  border: 5px solid #a4a8a9;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.bike .wrap .wheel div[class|="wheel"]::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  border: 4px solid #e79162;
+}
+.bike .wrap .wheel div[class|="wheel"] .roller {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 176px;
+  height: 176px;
+}
+.bike .wrap .wheel div[class|="wheel"] .roller li {
+  width: 1px;
+  height: 176px;
+  background: #a3a9a9;
+  position: absolute;
+  left: 88px;
+  animation: wheelAnimate infinite step-start 2s;
+  animation-timing-function: linear;
+}
+.bike .wrap .wheel div[class|="wheel"] .roller li::before {
+  content: "";
+  width: 1px;
+  height: 176px;
+  position: absolute;
+  background: #a3a9a9;
+  top: 0;
+  left: 0;
+  transform: rotate(30deg);
+}
+.bike .wrap .wheel div[class|="wheel"] .roller li::after {
+  content: "";
+  width: 1px;
+  height: 176px;
+  position: absolute;
+  background: #a3a9a9;
+  top: 0;
+  left: 0;
+  transform: rotate(60deg);
+}
+.bike .wrap .wheel div[class|="wheel"] .roller .roller-top {
+  top: 0;
+}
+.bike .wrap .wheel div[class|="wheel"] .roller .roller-bottom {
+  bottom: 0;
+  transform: rotate(90deg);
+  animation-delay: 500ms;
+}
+.bike .wrap .wheel div[class|="wheel"] .circle {
+  width: 6px;
+  height: 6px;
+  background: #5c6665;
+  border: 3px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -6px;
+  margin-top: -6px;
+  border-radius: 50%;
+  z-index: 3;
+}
+.bike .wrap .wheel div[class|="wheel"] .circle::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  border: 5px solid #5c6665;
+  border-radius: 50%;
+}
+.bike .wrap .wheel div[class|="wheel"] .circle::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  border-radius: 50%;
+  border: 4px dashed #5c6665;
+}
+.bike .wrap .wheel .wheel-left {
+  left: 0;
+}
+.bike .wrap .wheel .wheel-right {
+  right: 0;
+}
+.bike .wrap .padel {
+  width: 212px;
+  height: 84px;
+  position: absolute;
+  margin: 136px 0 0 96px;
+}
+.bike .wrap .padel .circle-big {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 5px solid #666;
+  position: absolute;
+  right: 7px;
+  top: 0;
+  z-index: 5;
+  animation: padelAnimateWheel infinite step-start 2s;
+  animation-timing-function: linear;
+}
+.bike .wrap .padel .circle-big::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border: 5px dashed #666;
+  position: absolute;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  z-index: 5;
+}
+.bike .wrap .padel .circle-big .circle-small {
+  width: 32px;
+  height: 32px;
+  background: #666;
+  margin: auto;
+  position: absolute;
+  border-radius: 50%;
+  margin: 23px 0 0 23px;
+}
+.bike .wrap .padel .circle-big .circle-small::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.bike .wrap .padel .line {
+  width: 6px;
+  height: 80px;
+  background: #666;
+  position: absolute;
+  transform: rotate(120deg);
+  margin: 4px 0 0 156px;
+  z-index: 3;
+  animation: padelAnimateWheel infinite step-start 2s;
+  animation-timing-function: linear;
+}
+.bike .wrap .padel .line::after {
+  content: "";
+  width: 6px;
+  height: 80px;
+  background: #666;
+  position: absolute;
+  transform: rotate(120deg);
+}
+.bike .wrap .padel .line::before {
+  content: "";
+  width: 6px;
+  height: 80px;
+  background: #666;
+  position: absolute;
+  transform: rotate(240deg);
+}
+.bike .wrap .padel .line .lines {
+  width: 6px;
+  height: 120px;
+  background: #666;
+  position: absolute;
+  margin: -20px 0 0 0;
+}
+.bike .wrap .padel .line .lines::after {
+  content: "";
+  width: 40px;
+  height: 10px;
+  position: absolute;
+  background: #666;
+  margin: -7px -17px;
+  animation: padelAnimateP infinite step-start 2s;
+  animation-timing-function: linear;
+}
+.bike .wrap .padel .line .lines::before {
+  animation: padelAnimateP infinite step-start 2s;
+  animation-timing-function: linear;
+  content: "";
+  width: 40px;
+  height: 10px;
+  position: absolute;
+  background: #666;
+  margin: 120px -17px;
+}
+.bike .wrap .padel .line-top {
+  width: 155px;
+  height: 4px;
+  background: #eee;
+  transform: rotate(-13deg);
+  position: relative;
+  top: 16px;
+  left: 10px;
+  z-index: 3;
+}
+.bike .wrap .padel .line-top::before {
+  content: "";
+  width: 155px;
+  height: 4px;
+  position: absolute;
+  background-size: 8px 2px;
+  animation: lineAnimate infinite step-start 2s;
+  animation-timing-function: linear;
+  background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
+}
+.bike .wrap .padel .line-bottom {
+  width: 155px;
+  height: 4px;
+  background: #eee;
+  transform: rotate(13deg);
+  position: relative;
+  top: 64px;
+  left: 5px;
+  z-index: 3;
+}
+.bike .wrap .padel .line-bottom::before {
+  content: "";
+  width: 155px;
+  height: 4px;
+  position: absolute;
+  background-size: 8px 2px;
+  animation: lineAnimate2 infinite step-start 2s;
+  animation-timing-function: linear;
+  background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
+}
